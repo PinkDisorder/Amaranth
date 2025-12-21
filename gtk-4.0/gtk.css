@@ -40,7 +40,6 @@ window.csd.maximized, window.csd.fullscreen, window.solid-csd {
 /* Buttons */
 button:hover, button:active, button:selected, button:checked,
 splitbutton:active, splitbutton:selected, splitbutton:checked, splitbutton:hover {
-    color: @accent_color;
     background-color: alpha(@accent_color, 0.2);
 }
 
