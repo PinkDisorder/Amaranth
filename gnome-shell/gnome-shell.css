@@ -1,28 +1,34 @@
+
 #panel {
-    background-color: #161618;
-    box-shadow: inset 0 -1px 0 0 #da698d;
+	background-color: #161618;
+	box-shadow: inset 0 -1px 0 0 #da698d;
 }
 
 .popup-menu-content {
-    background-color: #161618;
-    outline: none;
-    border: none;
-    box-shadow: inset 0 0 0 2px #da698d;
+	background-color: #161618;
+	outline: none;
+	border: none;
+	box-shadow: inset 0 0 0 2px #da698d;
 }
 
 .dash-background {
-    background-color: #161618;
-    box-shadow: inset 0 0 0 2px #da698d;
+	background-color: #161618;
+	box-shadow: inset 0 0 0 2px #da698d;
 }
 
 #dash .overview-tile .overview-icon,
 #dash .show-apps .overview-icon {
-    background-color: transparent;
+	background-color: transparent;
+}
+
+#dash .overview-tile .overview-icon:insensitive {
+	border-radius: 9999px;
+	background-color: rgba(85, 41, 55, 0.8);
 }
 
 #dash .overview-tile:hover .overview-icon,
 #dash .show-apps:hover .overview-icon {
-    border-radius: 9999px;
-    background-color: rgba(85, 41, 55, 0.8);
-    box-shadow: inset 0 0 0 2px #da698d;
+	border-radius: 9999px;
+	background-color: rgba(85, 41, 55, 0.8);
+	box-shadow: inset 0 0 0 2px #da698d;
 }
