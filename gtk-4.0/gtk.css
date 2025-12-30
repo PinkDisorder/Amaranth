@@ -1,12 +1,13 @@
+
 /* Color Palette */
 @define-color accent_color         #da698d;
 @define-color accent_bg_color      #161618;
 @define-color accent_fg_color      #f6f2ee;
-/*@define-color destructive_color    #00000000;*/
-/*@define-color destructive_bg_color #00000000;*/
-/*@define-color destructive_fg_color #00000000;*/
-/*@define-color success_color        #00000000;*/
-/*@define-color warning_color        #00000000;*/
+@define-color destructive_color    #e62e2e;
+@define-color destructive_bg_color alpha(@destructive_color, 0.7);
+@define-color destructive_fg_color @destructive_color;
+@define-color success_color        #8DDA69;
+@define-color warning_color        #DA7D69;
 
 @define-color window_bg_color    @accent_bg_color;
 @define-color window_fg_color    @accent_fg_color;
@@ -26,10 +27,11 @@
 @define-color sidebar_border_color   @shade_color;
 @define-color sidebar_shade_color    @shade_color;
 
+@define-color accent_faded           alpha(@accent_color, 0.4);
+
 /*@define-color scrollbar_outline_color @accent_color*/
 
 /* Window Decorations */
-
 window.csd { border: 2px solid @accent_color; }
 
 window.csd.maximized, window.csd.fullscreen, window.solid-csd {
@@ -40,12 +42,12 @@ window.csd.maximized, window.csd.fullscreen, window.solid-csd {
 /* Buttons */
 button:hover, button:active, button:selected, button:checked,
 splitbutton:active, splitbutton:selected, splitbutton:checked, splitbutton:hover {
-    background-color: alpha(@accent_color, 0.2);
+    background-color: @accent_faded;
 }
 
 toggle-group toggle:checked {
     box-shadow: inset 0 0 0 1px @accent_color;
-    background-color: alpha(@accent_color, 0.2);
+    background-color: @accent_faded;
 }
 
 /* Window Controls*/
@@ -53,28 +55,22 @@ windowcontrols button, windowcontrols button:hover, windowcontrols button > imag
 
 windowcontrols button > image:hover {
     color: @accent_color;
-    background-color: alpha(@accent_color, 0.2);
-    box-shadow: inset 0 0 0 1px alpha(@accent_color, 0.9);
+    background-color: @accent_faded;
+    box-shadow: inset 0 0 0 1px @accent_color;
 }
 
 /* Tabs & View Switcher */
 tabbar tab:selected, tabbar tab:hover,
 viewswitcher button:checked, viewswitcher button:hover {
-    background-color: alpha(@accent_color, 0.2);
+    background-color: @accent_faded;
 }
 
-tabbar tab:selected, viewswitcher button:checked {
-    box-shadow: inset 0 0 0 1px @accent_color;
-}
+tabbar tab:selected, viewswitcher button:checked { box-shadow: inset 0 0 0 1px @accent_color; }
 
 /* Popovers */
-popover arrow, popover contents {
-    border: 2px solid @accent_color;
-}
+popover arrow, popover contents { border: 2px solid @accent_color; }
 
-popover modelbutton:hover {
-    color: @accent_color;
-}
+popover modelbutton:hover { color: @accent_color; }
 
 /* Checks / Radios / Switches */
 check:checked, check:indeterminate, radio:checked, radio:indeterminate, switch:checked {
@@ -91,8 +87,8 @@ view:hover, view:active, view:selected,
 gridview > child:hover, gridview > child:active, gridview > child:selected,
 list.navigation-sidebar row:selected, list.navigation-sidebar row:hover,
 .nautilus-list-view row:selected, .nautilus-list-view row:hover {
-    box-shadow: inset 0 0 0 1px alpha(@accent_color, 0.9);
-    background-color: alpha(@accent_color, 0.2);
+    box-shadow: inset 0 0 0 1px @accent_color;
+    background-color: @accent_faded;
 }
 
 /* selection box */
@@ -112,3 +108,20 @@ modelbutton arrow { border: none; }
 
 /* OSD */
 .osd { background-color: alpha(@accent_color, 0.1); }
+
+/* Entries */
+entry.success { color: @success_color; }
+entry.success:focus-within { outline: 1px solid @success_color; }
+
+entry.warning { color: @warning_color; }
+entry.warning:focus-within { outline: 1px solid @warning_color; }
+
+entry.error { color: @destructive_fg_color; }
+entry.error:focus-within { outline: 1px solid @destructive_fg_color; }
+
+/* Labels */
+label.accent { color: @accent_color; }
+label.success { color: @success_color; }
+label.warning { color: @warning_color; }
+label.error { color: @destructive_fg_color; }
+
