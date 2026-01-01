@@ -1,0 +1,319 @@
+
+@define-color accent_color    #da698d;
+@define-color accent_bg_color #161618;
+@define-color accent_fg_color #f6f2ee;
+@define-color adwaita_gray    alpha(#f6f2ee, 0.1);
+@define-color transparent     rgba(0, 0, 0, 0);
+
+
+* {
+	background-color: @transparent;
+	background-image: none;
+	color: @accent_fg_color;
+	border: none;
+	outline: none;
+}
+
+window, dialog {
+	background-color: @accent_bg_color;
+	background-image: none;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.background {
+	background-color: @accent_bg_color;
+	background-image: none;
+}
+
+messagedialog {
+	border-radius: 12px;
+}
+
+tooltip {
+	background-color: @accent_bg_color;
+	background-image: none;
+	border-radius: 12px;
+	box-shadow: inset 0 0 0 2px @accent_color;
+}
+
+.titlebar {
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-image: none;
+	background-color: @accent_bg_color;
+}
+
+decoration {
+	/*border: 2px solid @accent_color;*/
+	border-radius: 12px;
+	outline: none;
+	box-shadow: 0 0 0 2px @accent_color;
+}
+
+tooltip decoration { box-shadow: none; }
+
+button {
+	margin-left: 6px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-right: 6px;
+}
+
+button.flat, button.popup, button.toggle {
+	background-color: rgba(0, 0, 0, 0);
+}
+.linked button { margin: 0; }
+
+stackswitcher button {
+	border-radius: 0;
+	background-color: @adwaita_gray;
+	background-image: none;
+}
+
+stackswitcher button:first-child {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+stackswitcher button:last-child {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+stackswitcher button:checked {
+	background-color: alpha(@accent_color, 0.2);
+	background-image: none;
+}
+
+radiobutton > radio,
+checkbutton > check,
+radiobutton:disabled > radio,
+checkbutton:disabled > check {
+	background-color: @adwaita_gray;
+}
+
+radiobutton:disabled > label,
+checkbutton:disabled > label {
+	color: @adwaita_gray;
+}
+
+radiobutton:checked > radio,
+checkbutton:checked > check,
+radiobutton:indeterminate > radio,
+checkbutton:indeterminate > check {
+	background-color: @accent_color;
+	background-image: none;
+	border: none;
+	color: @accent_fg_color;
+}
+
+selection {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+window.popup, menu, .menu, .context-menu, popover {
+	border-radius: 12px;
+	background-image: none;
+	border: none;
+}
+
+header, notebook {
+	background-color: @accent_bg_color;
+	border: none;
+	outline: none;
+}
+
+tab {
+	color: @accent_fg_color;
+}
+
+tab:hover:not(.reorderable-page) {
+	border-radius: 12px;
+	color: @accent_fg_color;
+	background-color: alpha(@accent_color, 0.2);
+}
+
+tab:checked:not(.reorderable-page) {
+	box-shadow: inset 0 0 0 1px @accent_color;
+	border-radius: 12px;
+	background-image: none;
+	background-color: alpha(@accent_color, 0.2);
+}
+
+
+tab.reorderable-page:checked, tab.reorderable-page:hover {
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+}
+
+tab.reorderable-page > box {
+	border-radius: 12px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+tab.reorderable-page:checked > box, tab.reorderable-page:checked:hover > box {
+	box-shadow: inset 0 0 0 1px @accent_color;
+	border-radius: 12px;
+	background-color: alpha(@accent_color, 0.2);
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+tab.reorderable-page:hover > box {
+	box-shadow: none;
+	border-radius: 12px;
+	background-color: alpha(@accent_color, 0.2);
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+entry, button {
+	background-color: @adwaita_gray;
+}
+
+button:hover {
+	background-color: alpha(@accent_color, 0.2);
+}
+
+button.titlebutton {
+	background-color: @transparent;
+}
+
+button.titlebutton:hover {
+	background-color: alpha(@accent_color, 0.2);
+	box-shadow: inset 0 0 0 1px @accent_color;
+	color: @accent_color;
+}
+
+button.toggle:checked {
+	background-color: alpha(@accent_color, 0.2);
+}
+
+button.toggle:disabled > label {
+	color: @adwaita_gray;
+}
+
+button.link, button.link:hover, button.link > label {
+	background-color: @transparent;
+	color: @accent_color;
+}
+
+switch {
+	background-color: @adwaita_gray;
+	padding: 4px;
+}
+
+switch:checked {
+	background-color: @accent_color;
+}
+
+switch > slider {
+	background-color: @accent_fg_color;
+}
+progress, block.filled {
+	background-image: none;
+	background-color: @accent_color;
+	border-color: @accent_color;
+}
+
+/************
+ * GtkScale *
+ ************/
+scale {
+	min-height: 2px;
+	min-width: 2px;
+}
+
+scale slider {
+	min-height: 18px;
+	min-width: 18px;
+	margin: -8px;
+}
+
+scale.fine-tune.horizontal {
+	min-height: 4px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+scale.fine-tune.vertical {
+	min-width: 4px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+scale trough {
+	/*transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);*/
+	outline: none;
+	background-color: rgba(246, 242, 238, 0.3);
+}
+
+scale trough:disabled {
+	background-color: rgba(246, 242, 238, 0.12);
+}
+
+scale highlight {
+	transition: background-image 75ms cubic-bezier(0, 0, 0.2, 1);
+	background-image: image(#2848a9);
+}
+
+scale highlight:disabled {
+	background-color: #161616;
+	background-image: image(rgba(246, 242, 238, 0.32));
+}
+
+scale fill {
+	transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
+	background-color: rgba(246, 242, 238, 0.3);
+}
+
+scale fill:disabled {
+	background-color: transparent;
+}
+
+scale slider {
+	transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+	border-radius: 9999px;
+	color: #2848a9;
+	background-color: #353535;
+	box-shadow: inset 0 0 0 2px #2848a9;
+}
+
+scale slider:hover {
+	box-shadow: inset 0 0 0 2px #2848a9, 0 0 0 8px rgba(246, 242, 238, 0.12);
+}
+
+scale slider:active {
+	box-shadow: inset 0 0 0 4px #2848a9, 0 0 0 8px rgba(246, 242, 238, 0.12);
+}
+
+scale slider:disabled {
+	box-shadow: inset 0 0 0 2px rgba(246, 242, 238, 0.32);
+}
+
+scale indicator {
+	background-color: rgba(246, 242, 238, 0.3);
+	color: transparent;
+}
+
+scale.horizontal indicator {
+	min-height: 8px;
+	min-width: 1px;
+}
+
+scale.vertical indicator {
+	min-height: 1px;
+	min-width: 8px;
+}
+
